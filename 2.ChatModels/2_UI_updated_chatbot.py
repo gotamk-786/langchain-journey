@@ -23,14 +23,22 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
+# ─── Mode Selection (input() ki jagah selectbox) ───
+choice = st.selectbox("Choose your mode:", ["1. Angry Mode 😠", "2. Funny Mode 😂", "3. Sad Mode 😢"])
+
+if "1" in choice:
+    mode = "You are an angry AI agent. You respond aggressively and impatiently."
+elif "2" in choice:
+    mode = "You are a very funny AI agent. You respond with humor and jokes."
+elif "3" in choice:
+    mode = "You are a very sad AI agent. You respond in a depressed and emotional tone."
+
 # ─── Aap Ka Original Code ───
 model = ChatMistralAI(model="mistral-small-2503", temperature=0.5)
 
-# Sirf yeh add kiya — chat yaad rahe
-if "message" not in st.session_state:
-    st.session_state.message = [
-        SystemMessage(content="You are a Funny AI agent")
-    ]
+if "message" not in st.session_state or st.session_state.get("last_mode") != choice:
+    st.session_state.message = [SystemMessage(content=mode)]
+    st.session_state.last_mode = choice
 
 # Purani chat dikhao
 for msg in st.session_state.message:
@@ -50,6 +58,5 @@ if prompt:
 
     with st.chat_message("user"):
         st.write(prompt)
-
     with st.chat_message("assistant"):
         st.write(response.content)
