@@ -81,4 +81,4 @@ if st.button("Extract Information"):
         st.subheader("Result")
         st.write(response.content)
     else:
-        st.warning("Please enter a paragraph.")
+        st.warning("Please enter a paragraph.")  
