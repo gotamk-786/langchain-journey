@@ -24,3 +24,51 @@ python-dotenv
 # Machine Learning Utilities
 numpy
 scikit-learn
+
+
+
+
+
+# LangChain
+langchain
+langchain-core
+langchain-community
+
+# LLM Providers
+langchain-openai
+langchain-mistralai
+openai
+mistralai
+
+# Vector Database
+chromadb
+
+# Embedding Models
+sentence-transformers
+
+# Document Loaders
+pypdf
+unstructured
+beautifulsoup4
+lxml
+
+# Text Processing
+tiktoken
+
+# Environment Variables
+python-dotenv
+
+# Data Handling
+pandas
+numpy
+
+# API / Backend
+fastapi
+uvicorn
+
+# UI (Optional)
+streamlit
+
+# Utilities
+tqdm
+requests

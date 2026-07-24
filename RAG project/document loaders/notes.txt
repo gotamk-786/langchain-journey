@@ -1,0 +1,218 @@
+Embedding
+
+Definition:
+Embedding ek technique hai jo text, image ya kisi bhi data ko numerical vector mein convert karti hai taake AI uska meaning (semantic meaning) samajh sake.
+
+Purpose:
+
+Semantic Search
+Similarity Search
+Recommendation Systems
+RAG Applications
+Clustering
+Classification
+
+Example:
+
+Cat  → [0.12, -0.45, 0.67, ...]
+Dog  → [0.11, -0.43, 0.69, ...]
+Car  → [-0.80, 0.25, 0.15, ...]
+
+Cat aur Dog ke vectors paas honge.
+Cat aur Car ke vectors door honge.
+
+Vector
+
+Vector numbers ki list hoti hai jo kisi object ka mathematical representation hoti hai.
+
+Example:
+
+[0.12, -0.54, 0.81, 0.24]
+
+Har embedding asal mein ek vector hoti hai.
+
+Vector Database
+
+Vector Database embeddings ko store karta hai aur similarity search perform karta hai.
+
+Popular Vector Databases:
+
+ChromaDB
+FAISS
+Pinecone
+Weaviate
+Milvus
+Qdrant
+
+Purpose:
+
+Store embeddings
+Fast similarity search
+Retrieve relevant documents
+Similarity Search
+
+User ki query ki embedding banayi jati hai.
+
+Phir us embedding ko Vector Database ke vectors ke sath compare kiya jata hai.
+
+Sabse similar vector retrieve kiya jata hai.
+
+Common similarity algorithms:
+
+Cosine Similarity
+Euclidean Distance
+Dot Product
+Chunking
+
+Large document ko chote chote pieces mein divide karna Chunking kehlata hai.
+
+Example
+
+100 Pages PDF
+
+↓
+
+Chunk 1
+Chunk 2
+Chunk 3
+Chunk 4
+...
+
+Chunking isliye hoti hai kyun ke LLM poori PDF ek sath process nahi kar sakta.
+
+Embedding Model
+
+Embedding Model text ko vectors mein convert karta hai.
+
+Popular Models:
+
+OpenAI Embeddings
+Sentence Transformers
+BGE
+E5
+Jina Embeddings
+Retriever
+
+Retriever ka kaam Vector Database se relevant chunks nikalna hota hai.
+
+Input:
+
+User Question
+
+Output:
+
+Relevant Chunks
+LLM
+
+LLM (Large Language Model) retrieved chunks ko padh kar final answer generate karta hai.
+
+Examples:
+
+GPT-4
+GPT-5
+Claude
+Gemini
+Mistral
+Llama
+RAG (Retrieval-Augmented Generation)
+
+Definition:
+
+RAG ek AI architecture hai jo pehle relevant information retrieve karta hai aur phir LLM us information ki basis par answer generate karta hai.
+
+Benefits:
+
+Hallucination kam hoti hai.
+Latest documents use ho sakte hain.
+Company ke private documents se answers milte hain.
+Complete RAG Pipeline
+PDF / Website / Database
+
+        ↓
+
+Document Loader
+
+        ↓
+
+Chunking
+
+        ↓
+
+Embedding Model
+
+        ↓
+
+Embeddings
+
+        ↓
+
+Vector Database
+
+========================
+
+User Question
+
+        ↓
+
+Question Embedding
+
+        ↓
+
+Retriever
+
+        ↓
+
+Relevant Chunks
+
+        ↓
+
+Prompt
+
+        ↓
+
+LLM
+
+        ↓
+
+Final Answer
+LangChain mein Flow
+Load Documents
+
+↓
+
+Split Documents
+
+↓
+
+Create Embeddings
+
+↓
+
+Store in Vector Database
+
+↓
+
+User Question
+
+↓
+
+Retriever
+
+↓
+
+LLM
+
+↓
+
+Answer
+One-Line Revision
+Embedding: Text → Vector
+Vector: Numerical representation of meaning.
+Vector Database: Stores embeddings.
+Similarity Search: Finds nearest vectors.
+Chunking: Breaks large documents into smaller parts.
+Retriever: Fetches relevant chunks.
+LLM: Generates the final answer.
+RAG: Retrieval + LLM Generation.
+
+Ye notes LangChain aur RAG ka core foundation hain. In concepts ko achi tarah samajh loge to PDF Chatbot, AI Search Engine, Knowledge Base aur production-level RAG systems banana kaafi aasaan ho jayega.
