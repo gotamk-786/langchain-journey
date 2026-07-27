@@ -39,5 +39,5 @@ embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-Mi
 verctorstore=Chroma.from_documents(
     documents=chunks,
     embedding=embedding_model,
-    persist_directory="chroma_db"
+    persist_directory=CHROMA_DB_DIR
 )
