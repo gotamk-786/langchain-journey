@@ -17,29 +17,15 @@ data = PyPDFLoader(
 )
 docs=data.load()
 
+for doc in docs:
+    doc.page_content = doc.page_content.encode("utf-8", "ignore").decode("utf-8")
+
 splitter=RecursiveCharacterTextSplitter(
     chunk_size=1000,
     chunk_overlap=200
 )
 
 chunks=splitter.split_documents(docs) 
-chunks = splitter.split_documents(docs)
-
-# strict filter — sirf asli text wale chunks rakhega
-good_chunks = []
-for c in chunks:
-    if isinstance(c.page_content, str) and c.page_content.strip():
-        good_chunks.append(c)
-
-chunks = good_chunks
-print("Total sahi chunks:", len(chunks))
-
-# check karo koi chunk galat type ka to nahi
-for i, c in enumerate(chunks):
-    if not isinstance(c.page_content, str):
-        print("GALAT chunk index:", i, "type:", type(c.page_content))
-# ⬇️ sirf ye ek line add ki hai — khaali chunks nikaal deti hai
-chunks=[c for c in chunks if c.page_content and c.page_content.strip()]
 
 
 embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
