@@ -2,6 +2,7 @@
 #split into chunks
 #create the embeddings
 #store into chroma
+import os
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import Chroma
@@ -11,6 +12,9 @@ from langchain_huggingface import HuggingFaceEmbeddings
 
 
 load_dotenv()
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+CHROMA_DB_DIR = os.path.join(BASE_DIR, "chroma_db")
 
 data = PyPDFLoader(
     r"D:\Langchain\RAG project\document loaders\deeplearning.pdf"
