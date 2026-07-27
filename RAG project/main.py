@@ -6,7 +6,7 @@ from langchain_mistralai import ChatMistralAI
 
 load_dotenv()
 
-embedding_model = HuggingFaceEmbeddings()
+embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
 
 vectorstore = Chroma(
     persist_directory="chroma_db",
