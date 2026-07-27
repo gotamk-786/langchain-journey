@@ -25,7 +25,7 @@ splitter=RecursiveCharacterTextSplitter(
     chunk_overlap=200
 )
 
-chunks=splitter.split_documents(docs) 
+chunks=splitter.split_documents(docs)  
 
 
 embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
