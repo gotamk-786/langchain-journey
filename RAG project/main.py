@@ -1,3 +1,4 @@
+import os
 from langchain_huggingface import HuggingFaceEmbeddings
 from dotenv import load_dotenv
 from langchain_core.prompts import ChatPromptTemplate
@@ -6,10 +7,12 @@ from langchain_mistralai import ChatMistralAI
 
 load_dotenv()
 
+CHROMA_DB_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "chroma_db")
+
 embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
 
 vectorstore = Chroma(
-    persist_directory="chroma_db",
+    persist_directory=CHROMA_DB_DIR,
     embedding_function=embedding_model
 )
 
