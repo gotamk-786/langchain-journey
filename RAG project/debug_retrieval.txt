@@ -1,0 +1,12 @@
+==== name of chapter 1
+--- 707-829-0515 (international or local) 707-829-0104 (fax) To comment or ask technical questions about this book, send email to bookques‐ tions@oreilly.
+--- members, including Jeff Dean, Nithin Buduma, Venkat Buduma, and William, Jack, as we finalized the manuscript of the text. xii | Preface
+--- versions of the code examples in this book’s Github repository. This book would not have been possible without the never-ending support and expertise 
+==== what is AI
+--- Table of Contents Preface. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+--- Index A acceleration, 74 Actor-Critic methods, 274 AdaDelta, 83 AdaGrad, 79-80 Adam optimization, 81, 83, 103, 109, 156, 257 add_episode(), 269 advant
+--- objects from their backgrounds, and even tell apart voices. Within a year, they’ve already developed an intuition for natural physics, can track objec
+==== table of contents
+--- Neural Turing Machines                                                                                               219 Attention-Based Memory Access
+--- 707-829-0515 (international or local) 707-829-0104 (fax) To comment or ask technical questions about this book, send email to bookques‐ tions@oreilly.
+--- Building a Convolutional Network for CIFAR-10                                                    107 Visualizing Learning in Convolutional Networks   
