@@ -72,3 +72,5 @@ streamlit
 # Utilities
 tqdm
 requests
+tavily-python
+rich
