@@ -193,6 +193,23 @@ streamlit run app.py      # Streamlit UI version
 - `retrievers/arixv.py` depends on the `arxiv` PyPI package; keep it pinned below v4 (`arxiv<4`), since `langchain-community`'s Arxiv utility still relies on the older `Search.results()` API that v4 removed.
 - `prompt_templates_code/` has its own detailed README (in Roman-Urdu/English) walking through each numbered lesson file in order — check it out for a guided learning path through prompt templates.
 
+## ☁️ Deploying the City Intelligence Agent (Streamlit Cloud)
+
+The `Agents/` mini project is the only one worth a live deployment (interactive UI). To deploy it for free on [Streamlit Community Cloud](https://streamlit.io/cloud):
+
+1. Sign in at [share.streamlit.io](https://share.streamlit.io) with your GitHub account.
+2. Click **"New app"** → select this repo (`gotamk-786/langchain-journey`) → branch `main`.
+3. Set **Main file path** to `Agents/app.py`.
+4. In **Advanced settings → Secrets**, paste:
+   ```toml
+   MISTRAL_API_KEY = "your-mistral-key"
+   OPENWEATHER_API_KEY = "your-openweather-key"
+   TAVILY_API_KEY = "your-tavily-key"
+   ```
+5. Click **Deploy**.
+
+The other folders (LLMs, ChatModels, Tools, runnable, RAG project, etc.) are CLI scripts/learning exercises, not deployable apps — no live demo needed for those.
+
 ## 📄 License
 
 This project is for educational purposes as part of my personal LangChain learning journey.
